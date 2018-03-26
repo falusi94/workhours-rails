@@ -21,6 +21,10 @@ Database defaults to mysql according to course requirements, using `root` user w
   - workhours_dev
 
 ## Database initialization
+To init database, run the following commands:
+`rake db:create`
+`rake db:migrate`
+`rake db:seed`
 
 ## How to run the test suite
 
