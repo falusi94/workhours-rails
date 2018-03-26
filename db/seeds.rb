@@ -8,17 +8,46 @@
 
 users = User.create([
   {
-    name: 'Adminisztrátor',
+    name: 'Administrator',
     username: 'admin',
     password: 'password',
     email: 'admin@example.org',
     admin: true
   },
   {
-    name: 'Felhasználó',
+    name: 'User',
     username: 'user',
     password: 'password',
     email: 'user@example.org',
     admin: false
+  }
+])
+
+projects = Project.create([
+  {
+    name: 'First project',
+    description: 'Very first project'
+  },
+  {
+    name: 'Hard project',
+    description: 'Very hard project'
+  }
+])
+
+issues = Issue.create([
+  {
+    name: 'First issue',
+    description: 'Very first issue',
+    project_id: 1
+  },
+  {
+    name: 'Second issue',
+    description: 'A bit harder',
+    project_id: 1
+  },
+  {
+    name: 'Third issue',
+    description: 'It belongs to another project',
+    project_id: 2
   }
 ])
