@@ -1,29 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="uk-clearfix">
+  <div class="uk-float-right">
+    <%= link_to 'Edit',
+        edit_user_path(@user),
+        class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
+    <%= link_to 'Destroy',
+        @user, method: :delete,
+        data: { confirm: 'Are you sure?' },
+        class: 'uk-icon-link', 'uk-icon': 'icon: trash' %>
+  </div>
+  <div class="uk-float-left">
+    <h1><%= @user.name %></h1>
+  </div>
+</div>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="uk-card uk-card-default uk-card-body">
+  <p>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+  <p>
+    <strong>Admin:</strong>
+    <%= @user.admin %>
+  </p>
+</div>

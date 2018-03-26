@@ -2,4 +2,8 @@
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Back', users_path %>
+<div class="uk-clearfix">
+  <div class="uk-float-right uk-margin" uk-margin>
+    <%= link_to 'Back', users_path, class: 'uk-button uk-button-default' %>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<%= form_for(user) do |f| %>
+<%= form_for(user, class: 'uk-form-horizontal uk-margin-large') do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,32 +11,49 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="uk-margin field">
+    <%= f.label :name, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :name, class: 'uk-input' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+  <div class="uk-margin field">
+    <%= f.label :username, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :username, class: 'uk-input' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.text_field :password %>
+  <div class="uk-margin field">
+    <%= f.label :password, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :password, class: 'uk-input' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="uk-margin field">
+    <%= f.label :name, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :name, class: 'uk-input' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :admin %>
-    <%= f.text_field :admin %>
+  <div class="uk-margin field">
+    <%= f.label :email, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :email, class: 'uk-input' %>
+    </div>
+  </div>
+
+  <div class="uk-margin field">
+    <%= f.label :admin, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :admin, class: 'uk-input' %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', class: 'uk-button uk-button-default' %>
   </div>
 <% end %>

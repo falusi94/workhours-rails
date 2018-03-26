@@ -1,29 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<div class="uk-clearfix">
+  <div class="uk-float-right">
+    <%= link_to 'Add',
+        new_project_path,
+        class: 'uk-icon-link', 'uk-icon': 'icon: plus' %>
+  </div>
+  <div class="uk-float-left">
+    <h1>Projects</h1>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+<ul class="uk-list uk-list-divider">
+  <% @projects.each do |project| %>
+    <li class="uk-card uk-card-default uk-card-body">
+      <div class="uk-clearfix uk-width-1-1">
+        <div class="uk-float-right">
+          <%= link_to 'Edit',
+              edit_project_path(project),
+              class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
+        </div>
+        <div class="uk-float-left">
+          <%= link_to project.name, project, class: 'uk-h3' %>
+        </div>
+      </div>
+      <div class="uk-width-1-1 uk-margin-remove">
+        <%= project.description %>
+      </div>
+    </li>
+  <% end %>
+</ul>

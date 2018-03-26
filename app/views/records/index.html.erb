@@ -1,33 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Records</h1>
+<div class="uk-clearfix">
+  <div class="uk-float-right">
+    <%= link_to 'Add',
+        new_record_path,
+        class: 'uk-icon-link', 'uk-icon': 'icon: plus' %>
+  </div>
+  <div class="uk-float-left">
+    <h1>Records</h1>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Issue</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @records.each do |record| %>
-      <tr>
-        <td><%= record.user %></td>
-        <td><%= record.issue %></td>
-        <td><%= record.date %></td>
-        <td><%= record.time %></td>
-        <td><%= link_to 'Show', record %></td>
-        <td><%= link_to 'Edit', edit_record_path(record) %></td>
-        <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Record', new_record_path %>
+<ul class="uk-list uk-list-divider">
+  <% @records.each do |record| %>
+    <li class="uk-card uk-card-default uk-card-body">
+      <div class="uk-clearfix uk-width-1-1">
+        <div class="uk-float-right">
+          <%= link_to 'Edit',
+              edit_record_path(record),
+              class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
+        </div>
+        <div class="uk-float-left">
+          <%= link_to "#{record.user} - #{record.issue}", project, class: 'uk-h3' %>
+        </div>
+      </div>
+      <div class="uk-clearfix uk-width-1-1">
+        <div class="uk-float-right">
+          <strong>When: </strong><%= record.date %>
+        </div>
+        <div class="uk-float-left">
+         <strong>How much: </strong><%= record.time %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

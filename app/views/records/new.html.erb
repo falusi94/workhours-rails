@@ -2,4 +2,8 @@
 
 <%= render 'form', record: @record %>
 
-<%= link_to 'Back', records_path %>
+<div class="uk-clearfix">
+  <div class="uk-float-right uk-margin" uk-margin>
+    <%= link_to 'Back', records_path, class: 'uk-button uk-button-default' %>
+  </div>
+</div>

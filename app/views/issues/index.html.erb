@@ -1,31 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Issues</h1>
+<div class="uk-clearfix">
+  <div class="uk-float-right">
+    <%= link_to 'Add',
+        new_issue_path,
+        class: 'uk-icon-link', 'uk-icon': 'icon: plus' %>
+  </div>
+  <div class="uk-float-left">
+    <h1>Issues</h1>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Project</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @issues.each do |issue| %>
-      <tr>
-        <td><%= issue.name %></td>
-        <td><%= issue.description %></td>
-        <td><%= issue.project %></td>
-        <td><%= link_to 'Show', issue %></td>
-        <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
-        <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Issue', new_issue_path %>
+<ul class="uk-list uk-list-divider">
+  <% @issues.each do |issue| %>
+    <li class="uk-card uk-card-default uk-card-body">
+      <div class="uk-clearfix uk-width-1-1">
+        <div class="uk-float-right">
+          <%= link_to 'Edit',
+              edit_issue_path(issue),
+              class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
+        </div>
+        <div class="uk-float-left">
+          <%= link_to "#{issue.name} (#{issue.project})" , issue, class: 'uk-h3' %>
+        </div>
+      </div>
+      <div class="uk-width-1-1 uk-margin-remove">
+        <%= issue.description %>
+      </div>
+    </li>
+  <% end %>
+</ul>

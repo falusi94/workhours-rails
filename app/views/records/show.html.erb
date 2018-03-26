@@ -1,24 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @record.user %>
-</p>
+<div class="uk-clearfix">
+  <div class="uk-float-right">
+    <%= link_to 'Edit',
+        edit_record_path(@record),
+        class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
+    <%= link_to 'Destroy',
+        @record, method: :delete,
+        data: { confirm: 'Are you sure?' },
+        class: 'uk-icon-link', 'uk-icon': 'icon: trash' %>
+  </div>
+  <div class="uk-float-left">
+    <h1><%= "#{@record.user} - #{@record.issue}" %></h1>
+  </div>
+</div>
 
-<p>
-  <strong>Issue:</strong>
-  <%= @record.issue %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @record.date %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @record.time %>
-</p>
-
-<%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+<div class="uk-card uk-card-default uk-card-body">
+  <p>
+    <strong>Date:</strong>
+    <%= @record.date %>
+  </p>
+  <p>
+    <strong>Time:</strong>
+    <%= @record.time %>
+  </p>
+</div>

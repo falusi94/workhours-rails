@@ -1,4 +1,4 @@
-<%= form_for(project) do |f| %>
+<%= form_for(project, class: 'uk-form-horizontal uk-margin-large') do |f| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -11,17 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="uk-margin field">
+    <%= f.label :name, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :name, class: 'uk-input' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="uk-margin field">
+    <%= f.label :description, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_area :description, class: 'uk-input' %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', class: 'uk-button uk-button-default' %>
   </div>
 <% end %>
