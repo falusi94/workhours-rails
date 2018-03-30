@@ -1,7 +1,8 @@
 <div class="uk-container uk-width-1-2">
-  <%= form_tag '/login', method: 'post', class: 'uk-form-horizontal uk-margin-large' do %>
+  <h1>Login</h1>
 
-    <legend class="uk-legend uk-margin-top">Login</legend>
+  <%= form_tag '/login', method: 'post', class: 'uk-form-horizontal' do %>
+
     <div class="uk-margin field">
       <%= label_tag :username, 'Username: ', class: 'uk-form-label' %>
       <div class="uk-form-controls">
