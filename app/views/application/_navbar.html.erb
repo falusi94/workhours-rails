@@ -1,10 +1,24 @@
 <nav class="uk-navbar-container" uk-navbar>
   <div class="uk-navbar-left">
+    <a href="/" class="uk-navbar-item uk-logo uk-margin-left">WorkHours</a>
     <ul class="uk-navbar-nav">
       <li><a href="/users">Users</a></li>
       <li><a href="/projects">Projects</a></li>
       <li><a href="/issues">Issues</a></li>
       <li><a href="/records">Records</a></li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav uk-margin-right">
+      <li>
+        <a href="#" uk-icon="chevron-down"><%= current_user.name %></a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li><%= link_to 'Edit', edit_user_path(current_user) %></li>
+            <li><%= link_to 'Logout', logout_path %></li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>
