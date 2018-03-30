@@ -11,6 +11,7 @@ users = User.create([
     name: 'Administrator',
     username: 'admin',
     password: 'password',
+    password_confirmation: 'password',
     email: 'admin@example.org',
     admin: true
   },
@@ -18,6 +19,7 @@ users = User.create([
     name: 'User',
     username: 'user',
     password: 'password',
+    password_confirmation: 'password',
     email: 'user@example.org',
     admin: false
   }
