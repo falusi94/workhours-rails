@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get '/login', to: 'sessions#show', as: :login
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy', as: :logout
+
   resources :records
   resources :issues
   resources :projects

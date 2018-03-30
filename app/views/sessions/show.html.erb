@@ -1,0 +1,22 @@
+<div class="uk-container uk-width-1-2">
+  <%= form_tag '/login', method: 'post', class: 'uk-form-horizontal uk-margin-large' do %>
+
+    <legend class="uk-legend uk-margin-top">Login</legend>
+    <div class="uk-margin field">
+      <%= label_tag :username, 'Username: ', class: 'uk-form-label' %>
+      <div class="uk-form-controls">
+        <%= text_field_tag :username, '', placeholder: 'username' %>
+      </div>
+    </div>
+
+    <div class="uk-margin field">
+      <%= label_tag :password, 'Password: ', class: 'uk-form-label' %>
+      <div class="uk-form-controls">
+        <%= password_field_tag :password, '', placeholder: 'password' %>
+      </div>
+    </div>
+
+    <%= submit_tag 'Login', class: 'uk-button uk-button-default uk-align-right' %>
+
+  <% end %>
+</div>
