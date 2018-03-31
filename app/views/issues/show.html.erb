@@ -2,13 +2,8 @@
 
 <div class="uk-clearfix">
   <div class="uk-float-right">
-    <%= link_to 'Edit',
-        edit_issue_path(@issue),
-        class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
-    <%= link_to 'Destroy',
-        @issue, method: :delete,
-        data: { confirm: 'Are you sure?' },
-        class: 'uk-icon-link', 'uk-icon': 'icon: trash' %>
+    <%= @issue.edit_link %>
+    <%= @issue.destroy_link %>
   </div>
   <div class="uk-float-left">
     <h1><%= @issue.name %></h1>

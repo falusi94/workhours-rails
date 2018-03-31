@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <div class="uk-clearfix">
-  <div class="uk-float-right">
-    <%= link_to 'Add',
-        new_issue_path,
-        class: 'uk-icon-link', 'uk-icon': 'icon: plus' %>
-  </div>
+  <% if current_user.admin? %>
+    <div class="uk-float-right">
+      <%= link_to 'Add',
+          new_issue_path,
+          class: 'uk-icon-link', 'uk-icon': 'icon: plus' %>
+    </div>
+  <% end %>
   <div class="uk-float-left">
     <h1>Issues</h1>
   </div>
@@ -16,12 +18,10 @@
     <li class="uk-card uk-card-default uk-card-body">
       <div class="uk-clearfix uk-width-1-1">
         <div class="uk-float-right">
-          <%= link_to 'Edit',
-              edit_issue_path(issue),
-              class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
+          <%= issue.edit_link %>
         </div>
         <div class="uk-float-left">
-          <%= link_to "#{issue.name} (#{issue.project.name})" , issue, class: 'uk-h3' %>
+          <%= link_to issue.compact_name, issue, class: 'uk-h3' %>
         </div>
       </div>
       <div class="uk-width-1-1 uk-margin-remove">

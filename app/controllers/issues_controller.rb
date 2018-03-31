@@ -6,7 +6,7 @@ class IssuesController < ApplicationController
   # GET /issues
   # GET /issues.json
   def index
-    @issues = Issue.all
+    @issues = IssueDecorator.all
   end
 
   # GET /issues/1
@@ -26,7 +26,7 @@ class IssuesController < ApplicationController
   # POST /issues
   # POST /issues.json
   def create
-    @issue = Issue.new(issue_params)
+    @issue = Issue.new(issue_params).decorate
 
     respond_to do |format|
       if @issue.save
@@ -66,7 +66,7 @@ class IssuesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_issue
-      @issue = Issue.find(params[:id])
+      @issue = IssueDecorator.find(params[:id])
     end
 
     def set_collections
