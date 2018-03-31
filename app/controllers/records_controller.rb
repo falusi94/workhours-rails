@@ -15,10 +15,14 @@ class RecordsController < ApplicationController
   # GET /records/new
   def new
     @record = Record.new
+    @issues = Issue.all
+    @users = User.all
   end
 
   # GET /records/1/edit
   def edit
+    @issues = Issue.all
+    @users = User.all
   end
 
   # POST /records

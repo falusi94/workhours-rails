@@ -14,21 +14,23 @@
   <div class="uk-margin field">
     <%= f.label :user_id, class: 'uk-form-label' %>
     <div class="uk-form-controls">
-      <%= f.text_field :user_id, class: 'uk-input' %>
+      <% options = options_from_collection_for_select(@users, :id, :name, @record.user_id) %>
+      <%= f.select :user_id,  options, {}, {class: 'uk-select'} %>
     </div>
   </div>
 
   <div class="uk-margin field">
     <%= f.label :issue_id, class: 'uk-form-label' %>
     <div class="uk-form-controls">
-      <%= f.text_field :issue_id, class: 'uk-input' %>
+      <% options = options_from_collection_for_select(@issues, :id, :name, @record.issue_id) %>
+      <%= f.select :issue_id,  options, {}, {class: 'uk-select'} %>
     </div>
   </div>
 
   <div class="uk-margin field">
     <%= f.label :date, class: 'uk-form-label' %>
     <div class="uk-form-controls">
-      <%= f.date_select :date, class: 'uk-input' %>
+      <%= f.date_select :date, {}, {class: 'uk-select uk-width-1-4'} %>
     </div>
   </div>
 

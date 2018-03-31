@@ -28,7 +28,8 @@
   <div class="uk-margin field">
     <%= f.label :project_id, class: 'uk-form-label' %>
     <div class="uk-form-controls">
-      <%= f.number_field :project_id, class: 'uk-input' %>
+      <% options = options_from_collection_for_select(@projects, :id, :name, @issue.project_id) %>
+      <%= f.select :project_id,  options, {}, {class: 'uk-select'} %>
     </div>
   </div>
 

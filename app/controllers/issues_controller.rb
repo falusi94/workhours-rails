@@ -15,10 +15,12 @@ class IssuesController < ApplicationController
   # GET /issues/new
   def new
     @issue = Issue.new
+    @projects = Project.all
   end
 
   # GET /issues/1/edit
   def edit
+    @projects = Project.all
   end
 
   # POST /issues

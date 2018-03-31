@@ -33,13 +33,6 @@
   </div>
 
   <div class="uk-margin field">
-    <%= f.label :name, class: 'uk-form-label' %>
-    <div class="uk-form-controls">
-      <%= f.text_field :name, class: 'uk-input' %>
-    </div>
-  </div>
-
-  <div class="uk-margin field">
     <%= f.label :email, class: 'uk-form-label' %>
     <div class="uk-form-controls">
       <%= f.text_field :email, class: 'uk-input' %>
@@ -49,7 +42,7 @@
   <div class="uk-margin field">
     <%= f.label :admin, class: 'uk-form-label' %>
     <div class="uk-form-controls">
-      <%= f.text_field :admin, class: 'uk-input' %>
+      <%= f.check_box :admin, class: 'uk-checkbox' %>
     </div>
   </div>
 
