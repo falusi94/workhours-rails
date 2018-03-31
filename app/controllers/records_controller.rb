@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?, only: [:edit, :update, :destroy]
 
   # GET /records
   # GET /records.json
@@ -74,5 +75,9 @@ class RecordsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
       params.require(:record).permit(:user_id, :issue_id, :date, :time)
+    end
+
+    def authorized?
+      redirect_to :back unless @record.editable?(current_user)
     end
 end
