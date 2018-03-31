@@ -16,7 +16,7 @@ class RecordsController < ApplicationController
 
   # GET /records/new
   def new
-    @record = Record.new
+    @record = Record.new.decorate
   end
 
   # GET /records/1/edit
