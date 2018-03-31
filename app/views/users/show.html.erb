@@ -2,13 +2,8 @@
 
 <div class="uk-clearfix">
   <div class="uk-float-right">
-    <%= link_to 'Edit',
-        edit_user_path(@user),
-        class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
-    <%= link_to 'Destroy',
-        @user, method: :delete,
-        data: { confirm: 'Are you sure?' },
-        class: 'uk-icon-link', 'uk-icon': 'icon: trash' %>
+    <%= @user.edit_link %>
+    <%= @user.destroy_link %>
   </div>
   <div class="uk-float-left">
     <h1><%= @user.name %></h1>
@@ -16,16 +11,10 @@
 </div>
 
 <div class="uk-card uk-card-default uk-card-body">
-  <p>
-    <strong>Username:</strong>
-    <%= @user.username %>
-  </p>
+  <%= @user.username_tag %>
   <p>
     <strong>Email:</strong>
     <%= @user.email %>
   </p>
-  <p>
-    <strong>Admin:</strong>
-    <%= @user.admin %>
-  </p>
+  <%= @user.admin_tag %>
 </div>
