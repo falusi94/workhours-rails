@@ -14,8 +14,7 @@
   <div class="uk-margin field">
     <%= f.label :user_id, class: 'uk-form-label' %>
     <div class="uk-form-controls">
-      <% options = options_from_collection_for_select(@users, :id, :name, @record.user_id) %>
-      <%= f.select :user_id,  options, {}, {class: 'uk-select'} %>
+      <%= record.user_select(f, @users) %>
     </div>
   </div>
 

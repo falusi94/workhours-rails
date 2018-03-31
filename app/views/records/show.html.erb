@@ -2,16 +2,11 @@
 
 <div class="uk-clearfix">
   <div class="uk-float-right">
-    <%= link_to 'Edit',
-        edit_record_path(@record),
-        class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
-    <%= link_to 'Destroy',
-        @record, method: :delete,
-        data: { confirm: 'Are you sure?' },
-        class: 'uk-icon-link', 'uk-icon': 'icon: trash' %>
+    <%= @record.edit_link %>
+    <%= @record.destroy_link %>
   </div>
   <div class="uk-float-left">
-    <h1><%= "#{@record.user.name} - #{@record.issue.name}" %></h1>
+    <h1><%= @record.compact_name %></h1>
   </div>
 </div>
 

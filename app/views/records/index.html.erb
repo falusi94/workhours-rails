@@ -16,12 +16,10 @@
     <li class="uk-card uk-card-default uk-card-body">
       <div class="uk-clearfix uk-width-1-1">
         <div class="uk-float-right">
-          <%= link_to 'Edit',
-              edit_record_path(record),
-              class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
+          <%= record.edit_link %>
         </div>
         <div class="uk-float-left">
-          <%= link_to "#{record.user.name} - #{record.issue.name}", record, class: 'uk-h3' %>
+          <%= link_to record.compact_name, record, class: 'uk-h3' %>
         </div>
       </div>
       <div class="uk-clearfix uk-width-1-1">

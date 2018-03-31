@@ -6,7 +6,7 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all
+    @records = RecordDecorator.all
   end
 
   # GET /records/1
@@ -26,7 +26,7 @@ class RecordsController < ApplicationController
   # POST /records
   # POST /records.json
   def create
-    @record = Record.new(record_params)
+    @record = Record.new(record_params).decorate
 
     respond_to do |format|
       if @record.save
@@ -66,7 +66,7 @@ class RecordsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_record
-      @record = Record.find(params[:id])
+      @record = RecordDecorator.find(params[:id])
     end
 
     def set_collections
