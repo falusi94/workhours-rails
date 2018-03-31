@@ -28,4 +28,11 @@ class UserDecorator < Draper::Decorator
     content_tag(:p, content_tag(:strong, 'Admin: ') + user.admin)
   end
 
+  def edit_admin_tag(f)
+    return unless current_user.admin?
+    check_box = f.check_box(:admin, class: 'uk-checkbox')
+    label = f.label(:admin, class: 'uk-form-label')
+    tag = content_tag(:div, check_box, class:'uk-form-controls')
+    content_tag(:div, label + tag)
+  end
 end

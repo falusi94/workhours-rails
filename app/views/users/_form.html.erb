@@ -39,12 +39,7 @@
     </div>
   </div>
 
-  <div class="uk-margin field">
-    <%= f.label :admin, class: 'uk-form-label' %>
-    <div class="uk-form-controls">
-      <%= f.check_box :admin, class: 'uk-checkbox' %>
-    </div>
-  </div>
+  <%= user.edit_admin_tag(f) %>
 
   <div class="actions">
     <%= f.submit 'Save', class: 'uk-button uk-button-default' %>
