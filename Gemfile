@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use npm for asset management
 gem 'npm-rails'
+# Use Draper for decorating views
+gem 'draper'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
