@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <div class="uk-clearfix">
-  <div class="uk-float-right">
-    <%= link_to 'Add',
-        new_project_path,
-        class: 'uk-icon-link', 'uk-icon': 'icon: plus' %>
-  </div>
+  <% if current_user.admin? %>
+    <div class="uk-float-right">
+      <%= link_to 'Add',
+          new_project_path,
+          class: 'uk-icon-link', 'uk-icon': 'icon: plus' %>
+    </div>
+  <% end %>
   <div class="uk-float-left">
     <h1>Projects</h1>
   </div>
@@ -16,9 +18,7 @@
     <li class="uk-card uk-card-default uk-card-body">
       <div class="uk-clearfix uk-width-1-1">
         <div class="uk-float-right">
-          <%= link_to 'Edit',
-              edit_project_path(project),
-              class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
+          <%= project.edit_link %>
         </div>
         <div class="uk-float-left">
           <%= link_to project.name, project, class: 'uk-h3' %>

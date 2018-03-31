@@ -2,13 +2,8 @@
 
 <div class="uk-clearfix">
   <div class="uk-float-right">
-    <%= link_to 'Edit',
-        edit_project_path(@project),
-        class: 'uk-icon-link', 'uk-icon': 'icon: pencil' %>
-    <%= link_to 'Destroy',
-        @project, method: :delete,
-        data: { confirm: 'Are you sure?' },
-        class: 'uk-icon-link', 'uk-icon': 'icon: trash' %>
+    <%= @project.edit_link %>
+    <%= @project.destroy_link %>
   </div>
   <div class="uk-float-left">
     <h1><%= @project.name %></h1>
