@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_collections, only: [:new, :edit, :create, :update]
   before_action :authorized?, only: [:edit, :update, :destroy]
 
   # GET /records
@@ -16,14 +17,10 @@ class RecordsController < ApplicationController
   # GET /records/new
   def new
     @record = Record.new
-    @issues = Issue.all
-    @users = User.all
   end
 
   # GET /records/1/edit
   def edit
-    @issues = Issue.all
-    @users = User.all
   end
 
   # POST /records
@@ -70,6 +67,15 @@ class RecordsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_record
       @record = Record.find(params[:id])
+    end
+
+    def set_collections
+      @issues = Issue.all
+      if current_user.admin?
+        @users = User.all
+      else
+        @users = [current_user]
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

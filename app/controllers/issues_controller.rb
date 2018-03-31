@@ -1,5 +1,6 @@
 class IssuesController < ApplicationController
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
+  before_action :set_collections, only: [:new, :edit, :create, :update]
   before_action :authorized?, only: [:edit, :update, :destroy]
 
   # GET /issues
@@ -16,12 +17,10 @@ class IssuesController < ApplicationController
   # GET /issues/new
   def new
     @issue = Issue.new
-    @projects = Project.all
   end
 
   # GET /issues/1/edit
   def edit
-    @projects = Project.all
   end
 
   # POST /issues
@@ -68,6 +67,10 @@ class IssuesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_issue
       @issue = Issue.find(params[:id])
+    end
+
+    def set_collections
+      @projects = Project.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
