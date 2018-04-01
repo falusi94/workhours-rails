@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= render partial: 'share/notice', locals: { notice: notice } %>
 
 <div class="uk-clearfix">
   <% if current_user.admin? %>
