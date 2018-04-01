@@ -15,4 +15,11 @@
     <strong>Description:</strong>
     <%= @project.description %>
   </p>
+  <p>
+    <strong>Issues:</strong>
+    <%= @project.issue.count %>
+  </p>
+  <div class="uk-width-1-1 uk-margin-top">
+    <%= @project.progress %>
+  </div>
 </div>

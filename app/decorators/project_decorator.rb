@@ -17,4 +17,16 @@ class ProjectDecorator < Draper::Decorator
         data: { confirm: 'Are you sure?' },
         class: 'uk-icon-link', 'uk-icon': 'icon: trash')
   end
+
+  def progress
+    if project.issue
+      max = project.issue.count
+      value = finished_issues(project.issue).count
+    else
+      max = 0
+      value = 0
+    end
+    content_tag(:progress, '', class: 'uk-progress uk-margin-remove',
+      max: max, value: value)
+  end
 end
