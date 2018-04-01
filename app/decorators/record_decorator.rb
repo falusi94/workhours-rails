@@ -24,8 +24,7 @@ class RecordDecorator < Draper::Decorator
 
   def user_select(f, users)
     if users.size == 1
-      f.hidden_field(:user_id, value: users.first.id) +
-        content_tag(:div, users.first.name, class: 'uk-input uk-disabled')
+      content_tag(:div, users.first.name, class: 'uk-input uk-disabled')
     else
       options = h.options_from_collection_for_select(users, :id, :name, record.user_id)
       f.select :user_id,  options, {}, {class: 'uk-select'}

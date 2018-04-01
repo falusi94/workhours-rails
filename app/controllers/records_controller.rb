@@ -26,7 +26,13 @@ class RecordsController < ApplicationController
   # POST /records
   # POST /records.json
   def create
-    @record = Record.new(record_params).decorate
+    if current_user.admin?
+      @record = Record.new(admin_record_params).decorate
+    else
+      p = record_params
+      p[:user_id] = current_user.id
+      @record = Record.new(p).decorate
+    end
 
     respond_to do |format|
       if @record.save
@@ -43,7 +49,9 @@ class RecordsController < ApplicationController
   # PATCH/PUT /records/1.json
   def update
     respond_to do |format|
-      if @record.update(record_params)
+      p = record_params
+      p = admin_record_params if current_user.admin?
+      if @record.update(p)
         format.html { redirect_to @record, notice: 'Record was successfully updated.' }
         format.json { render :show, status: :ok, location: @record }
       else
@@ -80,6 +88,10 @@ class RecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
+      params.require(:record).permit(:issue_id, :date, :time)
+    end
+
+    def admin_record_params
       params.require(:record).permit(:user_id, :issue_id, :date, :time)
     end
 
