@@ -1,0 +1,12 @@
+<div class="uk-alert-danger" id="error_explanation" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <h2><%= pluralize(error_count, "error") %> occured during save:</h2>
+  <ul class="uk-list">
+    <% messages.each do |message| %>
+      <li>
+        <a class="uk-alert-close" uk-close></a>
+        <%= message %>
+      </li>
+    <% end %>
+  </ul>
+</div>
