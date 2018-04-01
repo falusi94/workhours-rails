@@ -27,6 +27,20 @@
     </div>
   </div>
 
+  <div class="uk-margin field">
+    <%= f.label :estimated_time, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.number_field :estimated_time, class: 'uk-input' %>
+    </div>
+  </div>
+
+  <div class="uk-margin field">
+    <%= f.label :done, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.check_box :done, class: 'uk-checkbox' %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= f.submit 'Save', class: 'uk-button uk-button-default' %>
   </div>

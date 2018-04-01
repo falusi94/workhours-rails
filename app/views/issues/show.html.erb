@@ -16,6 +16,10 @@
     <%= @issue.description %>
   </p>
   <p>
+    <strong>Estimated time:</strong>
+    <%= @issue.estimated_time %>
+  </p>
+  <p>
     <strong>Project:</strong>
     <%= link_to @issue.project.name, @issue.project %>
   </p>

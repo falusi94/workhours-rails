@@ -15,7 +15,7 @@
 
 <ul class="uk-list uk-list-divider">
   <% @issues.each do |issue| %>
-    <li class="uk-card uk-card-default uk-card-body">
+    <li class="uk-card uk-card-default uk-card-body <%= issue.success %>">
       <div class="uk-clearfix uk-width-1-1">
         <div class="uk-float-right">
           <%= issue.edit_link %>
@@ -24,8 +24,13 @@
           <%= link_to issue.compact_name, issue, class: 'uk-h3' %>
         </div>
       </div>
-      <div class="uk-width-1-1 uk-margin-remove">
-        <%= issue.description %>
+      <div class="uk-clearfix uk-width-1-1">
+        <div class="uk-float-right">
+          <strong>ETA: </strong><%= issue.estimated_time %>
+        </div>
+        <div class="uk-float-left">
+          <%= issue.description %>
+        </div>
       </div>
     </li>
   <% end %>

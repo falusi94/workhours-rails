@@ -21,4 +21,9 @@ class IssueDecorator < Draper::Decorator
   def compact_name
     "#{issue.name} (#{issue.project.name})"
   end
+
+  def success
+    return unless issue.done?
+    'uk-alert-success'
+  end
 end

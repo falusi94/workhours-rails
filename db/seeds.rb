@@ -40,16 +40,22 @@ issues = Issue.create([
   {
     name: 'First issue',
     description: 'Very first issue',
-    project_id: 1
+    project_id: 1,
+    estimated_time: 62,
+    done: false
   },
   {
     name: 'Second issue',
     description: 'A bit harder',
-    project_id: 1
+    project_id: 1,
+    estimated_time: 123,
+    done: false
   },
   {
     name: 'Third issue',
     description: 'It belongs to another project',
-    project_id: 2
+    project_id: 2,
+    estimated_time: 12,
+    done: false
   }
 ])
