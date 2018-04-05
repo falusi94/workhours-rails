@@ -1,0 +1,31 @@
+<h1 class="uk-text-center">Registration</h1>
+
+<div class="uk-container uk-width-1-2">
+  <%= form_for(@user, class: 'uk-form-horizontal uk-margin-large') do |f| %>
+    <% if @user.errors.any? %>
+      <%= render alert,
+            error_count: @user.errors.count,
+            messages: @user.errors.full_messages %>
+    <% end %>
+
+    <div class="uk-margin field">
+      <%= f.text_field :name, placeholder: 'name', class: 'uk-input' %>
+    </div>
+
+    <div class="uk-margin field">
+      <%= f.text_field :username, placeholder: 'username', class: 'uk-input' %>
+    </div>
+
+    <div class="uk-margin field">
+      <%= f.text_field :password, placeholder: 'password', class: 'uk-input' %>
+    </div>
+
+    <div class="uk-margin field">
+      <%= f.text_field :email, placeholder: 'email', class: 'uk-input' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Register', class: 'uk-button uk-button-default uk-align-center' %>
+    </div>
+  <% end %>
+</div>
