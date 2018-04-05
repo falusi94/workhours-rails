@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: :logout
   get '/register', to: 'registration#new', as: :register
 
+  get '/', to: 'projects#index'
+
   resources :registration, only: [:create]
   resources :records
   resources :issues
