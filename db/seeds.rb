@@ -49,7 +49,7 @@ issues = Issue.create([
     description: 'A bit harder',
     project_id: 1,
     estimated_time: 123,
-    done: false
+    done: true
   },
   {
     name: 'Third issue',
