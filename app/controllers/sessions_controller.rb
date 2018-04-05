@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :require_login
   before_action :require_logout
 
-  def show
+  def new
   end
 
   def create

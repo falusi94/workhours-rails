@@ -1,0 +1,23 @@
+<div class="uk-container uk-width-1-2">
+  <h1 class="uk-text-center">Login</h1>
+
+  <%= form_tag '/login', method: 'post', class: 'uk-form-horizontal' do %>
+
+    <div class="uk-margin field">
+      <%= text_field_tag :username, '', placeholder: 'username', class: 'uk-input' %>
+    </div>
+
+    <div class="uk-margin field">
+      <%= text_field_tag :password, '', placeholder: 'password', class: 'uk-input' %>
+    </div>
+
+    <div class="">
+      <%= submit_tag 'Login', class: 'uk-button uk-button-default uk-align-center' %>
+    </div>
+
+    <div class="">
+      <%= link_to 'Not a member? Register here!', register_path, class: 'uk-text-center uk-align-center' %>
+    </div>
+
+  <% end %>
+</div>
