@@ -18,3 +18,20 @@
   </p>
   <%= @user.admin_tag %>
 </div>
+<%= @user.records_tag %>
+<div class="uk-card uk-card-default uk-card-body uk-margin-top uk-padding-remove">
+  <ul class="uk-list uk-list-divider">
+    <% @user.record.each do |record| %>
+      <li class="uk-padding-small">
+        <div class="uk-clearfix uk-width-1-1">
+          <div class="uk-float-right" uk-icon="clock">
+            <%= record.time %>
+          </div>
+          <div class="uk-float-left">
+            <%= link_to record.issue.compact_name, record.issue, class: 'uk-h3' %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

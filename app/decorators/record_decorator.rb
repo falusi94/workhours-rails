@@ -1,5 +1,6 @@
 class RecordDecorator < Draper::Decorator
   include Draper::LazyHelpers
+  decorates_association :issue
   delegate_all
   decorates_finders
 

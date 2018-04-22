@@ -1,5 +1,6 @@
 class UserDecorator < Draper::Decorator
   include Draper::LazyHelpers
+  decorates_association :record
   delegate_all
   decorates_finders
 
@@ -34,5 +35,10 @@ class UserDecorator < Draper::Decorator
     label = f.label(:admin, class: 'uk-form-label')
     tag = content_tag(:div, check_box, class:'uk-form-controls')
     content_tag(:div, label + tag)
+  end
+
+  def records_tag
+    return if record.count == 0
+    content_tag(:h3, 'Records', class: 'uk-h3')
   end
 end
