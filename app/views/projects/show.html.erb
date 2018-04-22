@@ -23,3 +23,28 @@
     <%= @project.progress %>
   </div>
 </div>
+<%= @project.issues_tag %>
+<div class="uk-card uk-card-default uk-card-body uk-margin-top uk-padding-remove">
+  <ul class="uk-list uk-list-divider">
+    <% @project.issue.each do |issue| %>
+      <li class="<%= issue.success %> uk-padding-small">
+        <div class="uk-clearfix uk-width-1-1">
+          <div class="uk-float-right">
+            <%= issue.edit_link %>
+          </div>
+          <div class="uk-float-left">
+            <%= link_to issue.compact_name, issue, class: 'uk-h3' %>
+          </div>
+        </div>
+        <div class="uk-clearfix uk-width-1-1">
+          <div class="uk-float-right">
+            <strong>ETA: </strong><%= issue.estimated_time %>
+          </div>
+          <div class="uk-float-left">
+            <%= issue.description %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

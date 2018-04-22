@@ -1,5 +1,6 @@
 class ProjectDecorator < Draper::Decorator
   include Draper::LazyHelpers
+  decorates_association :issue
   delegate_all
   decorates_finders
 
@@ -28,5 +29,10 @@ class ProjectDecorator < Draper::Decorator
     end
     content_tag(:progress, '', class: 'uk-progress uk-margin-remove',
       max: max, value: value)
+  end
+
+  def issues_tag
+    return if issue.count == 0
+    content_tag(:h3, 'Issues', class: 'uk-h3')
   end
 end
