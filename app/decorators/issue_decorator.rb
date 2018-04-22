@@ -26,4 +26,9 @@ class IssueDecorator < Draper::Decorator
     return unless issue.done?
     'uk-alert-success'
   end
+
+  def records_tag
+    return if record.count == 0
+    content_tag(:h3, 'Records', class: 'uk-h3')
+  end
 end

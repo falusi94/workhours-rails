@@ -20,7 +20,24 @@
     <%= @issue.estimated_time %>
   </p>
   <p>
-    <strong>Project:</strong>
+    <strong>Belongs to:</strong>
     <%= link_to @issue.project.name, @issue.project %>
   </p>
+</div>
+<%= @issue.records_tag %>
+<div class="uk-card uk-card-default uk-card-body uk-margin-top uk-padding-remove">
+  <ul class="uk-list uk-list-divider">
+    <% @issue.record.each do |record| %>
+      <li class="uk-padding-small">
+        <div class="uk-clearfix uk-width-1-1">
+          <div class="uk-float-right" uk-icon="clock">
+            <%= record.time %>
+          </div>
+          <div class="uk-float-left">
+            <%= link_to record.user.name, record.user, class: 'uk-h3' %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
