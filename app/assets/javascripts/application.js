@@ -12,3 +12,6 @@
 //
 //= require_tree .
 //= require npm-dependencies
+
+// loads the Icon plugin
+UIkit.use(UIkitIcons);
