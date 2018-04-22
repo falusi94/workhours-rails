@@ -27,6 +27,13 @@
   </div>
 
   <div class="uk-margin field">
+    <%= f.label :password_confirmation, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.password_field :password_confirmation, class: 'uk-input' %>
+    </div>
+  </div>
+
+  <div class="uk-margin field">
     <%= f.label :email, class: 'uk-form-label' %>
     <div class="uk-form-controls">
       <%= f.text_field :email, class: 'uk-input' %>
