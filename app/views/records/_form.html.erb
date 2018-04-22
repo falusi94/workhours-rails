@@ -30,7 +30,10 @@
   <div class="uk-margin field">
     <%= f.label :time, class: 'uk-form-label' %>
     <div class="uk-form-controls">
-      <%= f.number_field :time, class: 'uk-input' %>
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: clock"></span>
+        <%= f.number_field :time, class: 'uk-input' %>
+      </div>
     </div>
   </div>
 

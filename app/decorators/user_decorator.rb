@@ -5,14 +5,14 @@ class UserDecorator < Draper::Decorator
 
   def edit_link
     return unless user.editable?(current_user)
-    link_to('Edit',
+    link_to('',
         edit_user_path(user),
         class: 'uk-icon-link', 'uk-icon': 'icon: pencil')
   end
 
   def destroy_link
     return unless current_user.admin?
-    link_to('Destroy',
+    link_to('',
         user, method: :delete,
         data: { confirm: 'Are you sure?' },
         class: 'uk-icon-link', 'uk-icon': 'icon: trash')

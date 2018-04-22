@@ -5,14 +5,14 @@ class RecordDecorator < Draper::Decorator
 
   def edit_link
     return unless record.editable?(current_user)
-    link_to('Edit',
+    link_to('',
         edit_record_path(record),
         class: 'uk-icon-link', 'uk-icon': 'icon: pencil')
   end
 
   def destroy_link
     return unless record.editable?(current_user)
-    link_to('Destroy',
+    link_to('',
         record, method: :delete,
         data: { confirm: 'Are you sure?' },
         class: 'uk-icon-link', 'uk-icon': 'icon: trash')

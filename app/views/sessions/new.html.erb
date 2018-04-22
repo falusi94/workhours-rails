@@ -4,11 +4,17 @@
   <%= form_tag '/login', method: 'post', class: 'uk-form-horizontal' do %>
 
     <div class="uk-margin field">
-      <%= text_field_tag :username, '', placeholder: 'username', class: 'uk-input' %>
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: user"></span>
+        <%= text_field_tag :username, '', placeholder: 'username', class: 'uk-input' %>
+      </div>
     </div>
 
     <div class="uk-margin field">
-      <%= password_field_tag :password, '', placeholder: 'password', class: 'uk-input' %>
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+        <%= password_field_tag :password, '', placeholder: 'password', class: 'uk-input' %>
+      </div>
     </div>
 
     <div class="">

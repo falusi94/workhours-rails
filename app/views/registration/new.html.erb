@@ -9,23 +9,38 @@
     <% end %>
 
     <div class="uk-margin field">
-      <%= f.text_field :name, placeholder: 'name', class: 'uk-input' %>
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: user"></span>
+        <%= f.text_field :name, placeholder: 'name', class: 'uk-input' %>
+      </div>
     </div>
 
     <div class="uk-margin field">
-      <%= f.text_field :username, placeholder: 'username', class: 'uk-input' %>
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: link"></span>
+        <%= f.text_field :username, placeholder: 'username', class: 'uk-input' %>
+      </div>
     </div>
 
     <div class="uk-margin field">
-      <%= f.password_field :password, placeholder: 'password', class: 'uk-input' %>
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+        <%= f.password_field :password, placeholder: 'password', class: 'uk-input' %>
+      </div>
     </div>
 
     <div class="uk-margin field">
-      <%= f.password_field :password_confirmation, placeholder: 'password again', class: 'uk-input' %>
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+        <%= f.password_field :password_confirmation, placeholder: 'password again', class: 'uk-input' %>
+      </div>
     </div>
 
     <div class="uk-margin field">
-      <%= f.text_field :email, placeholder: 'email', class: 'uk-input' %>
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+        <%= f.text_field :email, placeholder: 'email', class: 'uk-input' %>
+      </div>
     </div>
 
     <div class="actions">

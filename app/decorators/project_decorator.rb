@@ -5,14 +5,14 @@ class ProjectDecorator < Draper::Decorator
 
   def edit_link
     return unless current_user.admin?
-    link_to('Edit',
+    link_to('',
         edit_project_path(project),
         class: 'uk-icon-link', 'uk-icon': 'icon: pencil')
   end
 
   def destroy_link
     return unless current_user.admin?
-    link_to('Destroy',
+    link_to('',
         project, method: :delete,
         data: { confirm: 'Are you sure?' },
         class: 'uk-icon-link', 'uk-icon': 'icon: trash')
