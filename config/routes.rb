@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy', as: :logout
   get '/register', to: 'registration#new', as: :register
+  post '/register', to: 'registration#create', as: :create_registration
 
   get '/', to: 'projects#index'
 

@@ -1,7 +1,7 @@
 <h1 class="uk-text-center">Registration</h1>
 
 <div class="uk-container uk-width-1-2">
-  <%= form_for(@user, class: 'uk-form-horizontal uk-margin-large') do |f| %>
+  <%= form_for(@user, url: create_registration_path, class: 'uk-form-horizontal uk-margin-large') do |f| %>
     <% if @user.errors.any? %>
       <%= render partial: 'share/alert', locals:
           { error_count: @user.errors.count,
