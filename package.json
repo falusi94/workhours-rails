@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "browserify": "^16.2.2",
+    "uikit": "^3.0.0-rc.2"
+  }
+}
